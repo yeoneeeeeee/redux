@@ -1,37 +1,39 @@
+// 전체 코드에도 있음
+
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 <Router>
 
-<div className='container'>
+    <div className='container'>
 
-<nav>
+        <nav>
 
-<ul>
+            <ul>
 
-<li>
+                <li>
 
-<Link to="/">List</Link>
+                    <Link to="/">List</Link>
 
-</li>
+                </li>
 
-<li>
+                <li>
 
-<Link to="/create">Add New Movie</Link>
+                    <Link to="/create">Add New Movie</Link>
 
-</li>
+                </li>
 
-</ul>
+            </ul>
 
-</nav>
+        </nav>
 
-<Routes>
+        <Routes>
 
-<Route path="/" element={<Home movies={movies} onDeleteMovie={handleDeleteMovie} />} />
+            <Route path="/" element={<Home movies={movies} onDeleteMovie={handleDeleteMovie} />} />
 
-<Route path="/create" element={<CreateMovie newMovie={newMovie} onInputChange={handleInputChange} onAddMovie={handleAddMovie} />} />
+            <Route path="/create" element={<CreateMovie newMovie={newMovie} onInputChange={handleInputChange} onAddMovie={handleAddMovie} />} />
 
-</Routes>
+        </Routes>
 
-</div>
+    </div>
 
 </Router>
