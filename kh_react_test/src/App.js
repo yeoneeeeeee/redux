@@ -30,14 +30,17 @@ const App = () => {
       return;
     }
 
-    const isDuplicate = movies.some(movie => String(movie.id) === newMovie.id);
-    if (isDuplicate) {
-      alert('이미 존재하는 ID입니다.');
-      setNewMovie({ ...newMovie, ['id']: '' });
-      return;
-    }
-    setMovies([...movies, newMovie]);
-    setNewMovie({ id: '', title: '', genre: '', release_date: '' });
+  //some : 반복문 함수 (다른 함수 써도 상관없다.)
+  const isDuplicate = movies.some(movie => String(movie.id) === newMovie.id);
+  if (isDuplicate) {
+    alert('이미 존재하는 ID입니다.');
+    setNewMovie({ ...newMovie, ['id']: '' });
+    return;
+  }
+  setMovies([...movies, newMovie]);
+  //문제8. 신규 등록 페이지에서 addMovie 버튼을 누르면 입력 후 , 모든 입력 필드는 깨끗하게 비워주세요.
+  setNewMovie({ id: '', title: '', genre: '', release_date: '' });
+  //id에 해당하는 태그가져와서 value=""; 코드로 해도 상관없다.
   };
 
   const handleDeleteMovie = (id) => {
